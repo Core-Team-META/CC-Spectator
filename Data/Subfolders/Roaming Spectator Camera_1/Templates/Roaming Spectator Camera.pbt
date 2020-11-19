@@ -1,5 +1,5 @@
 ﻿Assets {
-  Id: 8641578782726436983
+  Id: 12219233505765872805
   Name: "Roaming Spectator Camera"
   PlatformAssetType: 5
   TemplateAsset {
@@ -28,7 +28,7 @@
         Folder {
           BundleDummy {
             ReferencedAssets {
-              Id: 15072707854557510188
+              Id: 15645613884578620415
             }
           }
         }

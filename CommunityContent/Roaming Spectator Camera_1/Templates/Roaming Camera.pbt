@@ -1,5 +1,5 @@
 ﻿Assets {
-  Id: 15072707854557510188
+  Id: 12876095096139452226
   Name: "Roaming Camera"
   PlatformAssetType: 5
   TemplateAsset {
@@ -67,7 +67,7 @@
         }
         Script {
           ScriptAsset {
-            Id: 9837187361809419917
+            Id: 3959658128565808624
           }
         }
       }
@@ -137,7 +137,7 @@
         }
         Script {
           ScriptAsset {
-            Id: 9472541818654771535
+            Id: 13193900917845561440
           }
         }
       }
@@ -563,7 +563,7 @@
         }
         Script {
           ScriptAsset {
-            Id: 16514530038917306159
+            Id: 6848740911606603264
           }
         }
       }

@@ -1,5 +1,5 @@
 ﻿Assets {
-  Id: 16514530038917306159
+  Id: 6848740911606603264
   Name: "RoamingCameraClient"
   PlatformAssetType: 3
   TextAsset {
@@ -7,7 +7,7 @@
       Overrides {
         Name: "cs:FindSmartObjectUtil"
         AssetReference {
-          Id: 1804420434291684979
+          Id: 1930784084033777579
         }
       }
       Overrides {
