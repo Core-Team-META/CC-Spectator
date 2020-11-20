@@ -38,10 +38,10 @@ local TEAM_SPECTATOR = RootGroup:GetCustomProperty("SpectatorTeam")
 local SPECTATE_AFTER_DEATH = RootGroup:GetCustomProperty("SpectateAfterDeath")
 local WAIT_TIME_AFTER_DEATH = RootGroup:GetCustomProperty("WaitTimeAfterDeath")
 local IGNORE_DEAD_PLAYERS = RootGroup:GetCustomProperty("IgnoreDeadPlayers")
+local UPON_RESPAWN_UNSPECTATE = RootGroup:GetCustomProperty("UnspectateUponRespawn")
 
 local FREECAM_ENABLED = RootGroup:GetCustomProperty("FreecamEnabled")
 
-local UPON_RESPAWN_UNSPECTATE = RootGroup:GetCustomProperty("UnspectateUponRespawn")
 local SHOW_CURSOR_BINDING = RootGroup:GetCustomProperty("ShowCursorBinding")
 local BINDING_TOGGLE = RootGroup:GetCustomProperty("B_Toggle")
 local BINDING_CHANGE_MODE = RootGroup:GetCustomProperty("B_ChangeMode")
