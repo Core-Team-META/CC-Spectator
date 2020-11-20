@@ -251,6 +251,36 @@ local function OnPlayerLeft(player)
 	SpectateFirstPlayer(player)
 end
 
+local function ChangeUiMode()
+	if(spectateMode == SpectateMode.NONE) then
+		ChangeSpectatorModePanel.visibility = Visibility.FORCE_OFF
+	else
+		ChangeSpectatorModePanel.visibility = Visibility.INHERIT
+	end
+
+	if(spectateMode == SpectateMode.PLAYER) then
+		FreecamMovePanel.visibility = Visibility.FORCE_OFF
+		FreecamDecreaseSpeedPanel.visibility = Visibility.FORCE_OFF
+		FreecamIncreaseSpeedPanel.visibility = Visibility.FORCE_OFF
+
+		SpectatePreviousPlayerPanel.visibility = Visibility.INHERIT
+		SpectateNextPlayerPanel.visibility = Visibility.INHERIT
+	elseif(spectateMode == SpectateMode.FREECAM) then
+		SpectatePreviousPlayerPanel.visibility = Visibility.FORCE_OFF
+		SpectateNextPlayerPanel.visibility = Visibility.FORCE_OFF
+
+		FreecamMovePanel.visibility = Visibility.INHERIT
+		FreecamDecreaseSpeedPanel.visibility = Visibility.INHERIT
+		FreecamIncreaseSpeedPanel.visibility = Visibility.INHERIT
+	else
+		SpectatePreviousPlayerPanel.visibility = Visibility.FORCE_OFF
+		SpectateNextPlayerPanel.visibility = Visibility.FORCE_OFF
+		FreecamMovePanel.visibility = Visibility.FORCE_OFF
+		FreecamDecreaseSpeedPanel.visibility = Visibility.FORCE_OFF
+		FreecamIncreaseSpeedPanel.visibility = Visibility.FORCE_OFF
+	end
+end
+
 ------------------------------------------------------------------------------------------------------------------------
 --	GLOBAL FUNCTIONS
 ------------------------------------------------------------------------------------------------------------------------
@@ -262,6 +292,7 @@ function Freecam()
 	debounce = true
 
 	Unspectate()
+	ChangeUiMode()
 
 	LocalPlayer:SetOverrideCamera(FreecamCamera)
 
@@ -276,6 +307,8 @@ function Spectate(player)
 
 	if(debounce) then return end
 	debounce = true
+
+	ChangeUiMode()
 
 	currentlySpectating = player
 
@@ -292,6 +325,8 @@ end
 --	Forces unspectate
 function Unspectate()
 	currentlySpectating = nil
+
+	ChangeUiMode()
 
 	--SpectatorUI.visibility = Visibility.FORCE_OFF
 	--SpectatingName.text = ""
@@ -337,7 +372,6 @@ end
 --	INITIALIZATION
 ------------------------------------------------------------------------------------------------------------------------
 
-Game.playerJoinedEvent:Connect(OnPlayerJoined)
 Game.playerLeftEvent:Connect(OnPlayerLeft)
 LocalPlayer.bindingPressedEvent:Connect(OnBindingPressed)
 LocalPlayer.bindingReleasedEvent:Connect(OnBindingReleased)
