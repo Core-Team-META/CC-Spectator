@@ -93,7 +93,7 @@ end
 local function GetCurrentPlayerIndex()
 	if(not currentlySpectating) then return end
 
-	for index, player in ipairs(players) do
+	for index, player in ipairs(GetPlayersList()) do
 		if(player == currentlySpectating) then
 			return index
 		end
